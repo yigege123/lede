@@ -72,7 +72,7 @@ jobs:
           # 在 cat >> .config <<EOF 到 EOF 之间粘贴你的编译配置, 需注意缩进关系
           # 例如:
 
-           # ========================固件定制部分========================
+          # ========================固件定制部分========================
           # 
           # 
           # 如果不对本区块做出任何编辑, 则生成默认配置固件. 
@@ -195,7 +195,7 @@ jobs:
       - name: Make download
         run: |
           make download -j8 || make download -j1 V=s
-          rm -rf $(find ./dl/ -size -1024c)
+          rm -rf $(find ./dl/ -size -1024c);
           df -h
 
       - name: Compile firmware
