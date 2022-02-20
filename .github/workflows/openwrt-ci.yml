@@ -192,7 +192,9 @@ jobs:
 
       - name: Make download
         run: |
-         make -j8 download V=s
+          make download -j8
+          find dl -size -1024c -exec ls -l {} \;
+          find dl -size -1024c -exec rm -f {} \;
           
   
 
